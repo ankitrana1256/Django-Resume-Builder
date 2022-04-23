@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'front.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="title">
+                    <img src="{% static 'pngegg.png' %}" height=150px width=150px>
+                    <h1>{{ person.first_name }} {{person.last_name}}</h1>
+                    <hr />
+                </div>
+                <div class="info">
+                    <div class="left">
+                        <span><b>Age : </b>{{person.age}}<br></span>
+                        <span><b>Gender : </b>{{person.gender}}<br></span>
+                        <span><b>Mobile : </b>{{person.mobile}}<br></span>
+                        <span><b>Email : </b>{{person.email}}<br></span>
+
+                    </div>
+                    <div class="right">
+                        <span><b>Stream : </b>{{edu.stream.value}}</span>
+                        <span><b>Address : </b>{{person.address}}</span>
+                        <span><b>Github : </b>{{person.github}}</span>
+                        <span><b>LinkedIn : </b>{{person.linkedin}}</span>
+                    </div>
+                </div>
+                <hr>
+                <div class="details">
+                    <h1>Summary</h1>
+                    <h4>{{edu.description.value}}</h4>
+                </div>
+                <hr />
+                <div class="skill">
+                    <h1>Skills</h1>
+                    <div class="skill-container">
+                        {% for i in skills %}
+                            <h3 class="item">{{i}}</h3>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
